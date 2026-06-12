@@ -32,13 +32,19 @@
 }
 
 .navbar__link {
-    position: relative;
+    display: inline-flex;
+    padding: 19px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
-    color: #111;
+    color: #000;
+    font-family: Inter;
     font-size: 32px;
+    font-style: normal;
     font-weight: 400;
+    line-height: normal;
     text-decoration: none;
-    padding-bottom: 8px;
 }
 
 .navbar__link--active {
