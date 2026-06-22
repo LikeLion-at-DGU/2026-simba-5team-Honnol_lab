@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from .models import Profile, Place, Tag, VisitTime, Purpose, Review,PlaceLike
 from django.db.models import Avg, Count
 
+
 # Create your views
 def main(request):
     if not request.user.is_authenticated: 
@@ -49,6 +50,8 @@ def login(request):
             auth_login(request, user)
 
             return redirect('main')
+        else:
+            return render(request, 'pages/login.html', {'error': '아이디 또는 비밀번호가 일치하지 않습니다.'})
 
     return render(request, 'pages/login.html')
 
@@ -70,7 +73,7 @@ def signup(request):
 
             return redirect('testpage')
         else:
-            return render(request, 'pages/signup.html', {'error': '비밀전호가 일치하지 않습니다.'})
+            return render(request, 'pages/signup.html', {'error': '비밀번호가 일치하지 않습니다.'})
     
     return render(request, 'pages/signup.html')
 
@@ -213,5 +216,5 @@ def create_place(request):
             }
 
         )
-        return redirect('placeinfo', place_id=place.id)
+        return redirect('createreview', place_id=place.id)
     return redirect('main')
