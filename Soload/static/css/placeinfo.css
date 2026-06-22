@@ -377,18 +377,6 @@
     background: var(--g-normal, #A5DD2B);
 }
 
-.stat-bar-fill--high {
-    width:82%;
-}
-
-.stat-bar-fill--medium {
-    width:52%;
-}
-
-.stat-bar-fill--low {
-    width:28%;
-}
-
 .place-action-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
