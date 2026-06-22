@@ -37,8 +37,8 @@
                 <span class="place-card_tag">{{ place.recommended_level }} 추천</span>
 
                 <div class="place-card_image">
-                    {% if place.images %}
-                    <img src="{{ place.images.url }}" alt="{{ place.name }}">
+                    {% if place.thumbnail %}
+                        <img src="{{ place.thumbnail }}" alt="{{ place.name }}">
                     {% endif %}
                 </div>
 

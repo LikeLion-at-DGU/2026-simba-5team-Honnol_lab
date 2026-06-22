@@ -13,31 +13,39 @@
 
         <section class="placeinfo-content">
 
+            {% with images=place.images.all %}
             <section class="place-photo-section">
-                <button type="button" class="place-photo-button place-photo-button--prev">
+
+                {% if images|length > 1 %}
+                <button type="button"class="place-photo-button place-photo-button--prev">
                     &lt;
                 </button>
+            {% endif %}
 
-                <div class="place-photo-box">
-                    {% if place.images %}
-                        <img src="{{ place.images.url }}" alt="{{ place.name }}">
-                    {% else %}
-                        <span class="brown-light-l">장소 사진이 없습니다.</span>
-                    {% endif %}
-                </div>
+            <div class="place-photo-box">
+                {% for img in images %}
+                    <img src="{{ img.image.url }}" alt="{{ place.name }}" class="place-photo-image{% if forloop.first %} place-photo-image--active{% endif %}">
+                {% empty %}
+                    <span class="brown-light-l">장소 사진이 없습니다.</span>
+                {% endfor %}
+            </div>
 
+            {% if images|length > 1 %}
                 <button type="button" class="place-photo-button place-photo-button--next">
                     &gt;
                 </button>
+            {% endif %}
 
+            {% if images %}
                 <div class="place-photo-dots">
-                    <span class="place-photo-dot place-photo-dot--active"></span>
-                    <span class="place-photo-dot"></span>
-                    <span class="place-photo-dot"></span>
-                    <span class="place-photo-dot"></span>
-                    <span class="place-photo-dot"></span>
+                    {% for img in images %}
+                        <span class="place-photo-dot{% if forloop.first %} place-photo-dot--active{% endif %}"></span>
+                    {% endfor %}
                 </div>
+            {% endif %}
+
             </section>
+            {% endwith %}
 
             <section class="place-summary">
                 <div class="place-title">
@@ -308,5 +316,5 @@
     </div>
 </main>
 
-<script src="{% static 'js/testpage.js' %}?v=2"></script>
+<script src="{% static 'js/placeinfo.js' %}?v=2"></script>
 {% endblock %}
