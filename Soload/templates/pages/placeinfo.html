@@ -178,11 +178,12 @@
                     <div>태그 통계(TOP 3)</div>
 
                     {% for tag in top_tags %}
+                    {% widthratio tag.review_count review_count 100 as tag_percent %}
                         <div class="stat-row">
                             <span>#{{ tag.name }} ({{ tag.review_count }})</span>
 
                             <div class="stat-bar">
-                                <div class="stat-bar-fill stat-bar-fill--{% cycle 'high' 'medium' 'low' %}"></div>
+                                <div class="stat-bar-fill" style="width: {{ tag_percent }}%;"></div>
                             </div>
                         </div>
                     {% empty %}
@@ -194,13 +195,14 @@
                     <div>방문 시간대(TOP 3)</div>
 
                     {% for visit_time in top_visit_times %}
+                    {% widthratio visit_time.review_count review_count 100 as visit_percent %}
                         <div class="stat-row">
                             <span>
                                 {{ visit_time.name }} ({{ visit_time.review_count }})
                             </span>
 
                             <div class="stat-bar">
-                                <div class="stat-bar-fill stat-bar-fill--{% cycle 'high' 'medium' 'low' %}"></div>
+                                <div class="stat-bar-fill" style="width: {{ visit_percent }}%;"></div>
                             </div>
                         </div>
                     {% empty %}
