@@ -90,9 +90,8 @@
                         <span class="saved-place-tag">Lv.{{ like.place.recommended_level }} 추천</span>
                         
                         <div class="saved-place-image">
-                            {% if like.place.images %}
-                            <img src="{{ like.place.images.url }}"
-                                alt="{{ like.place.name }}">
+                            {% if like.place.thumbnail %}
+                                <img src="{{ like.place.thumbnail }}" alt="{{ like.place.name }}">
                             {% else %}
                                 <p class="brown-light-l">사진 없음</p>
                             {% endif %}

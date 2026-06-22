@@ -11,6 +11,55 @@ document.addEventListener("DOMContentLoaded", function () {
     const helpList = document.getElementById("help-list");
     const helpDescription = document.getElementById("help-description");
 
+    const photos = document.querySelectorAll(".place-photo-image");
+    const dots = document.querySelectorAll(".place-photo-dot");
+    const prevButton = document.querySelector(".place-photo-button--prev");
+    const nextButton = document.querySelector(".place-photo-button--next");
+
+    let currentPhotoIndex = 0;
+
+    function showPhoto(index) {
+        if (photos.length === 0) {
+            return;
+        }
+
+        currentPhotoIndex = (index + photos.length) % photos.length;
+
+        photos.forEach(function (photo, photoIndex) {
+            photo.classList.toggle(
+                "place-photo-image--active",
+                photoIndex === currentPhotoIndex
+            );
+        });
+
+        dots.forEach(function (dot, dotIndex) {
+            dot.classList.toggle(
+                "place-photo-dot--active",
+                dotIndex === currentPhotoIndex
+            );
+        });
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", function () {
+            showPhoto(currentPhotoIndex - 1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            showPhoto(currentPhotoIndex + 1);
+        });
+    }
+
+    dots.forEach(function (dot, dotIndex) {
+        dot.addEventListener("click", function () {
+            showPhoto(dotIndex);
+        });
+    });
+
+    showPhoto(0);
+
     const helpData = {
         cafe: {
             title : "☕카페",
