@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
+
 # Create your models here.
 
 LEVEL_NAME = {1: "달걀", 2: "병아리", 3: "용감 병아리", 4: "혼놀 영계", 5: "혼놀 마스터 닭"}
@@ -104,6 +105,11 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.place.name} - {self.writer.profile.nickname}"
 
+class ReviewImage(models.Model):
+    review = models.ForeignKey(Review, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='reviews/')
+    def __str__(self):
+        return f"{self.review.place.name} 후기 사진"
 
 class PlaceLike(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

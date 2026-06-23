@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from .models import Profile, Place, Tag, VisitTime, Purpose, Review,PlaceLike
+from .models import Profile, Place, Tag, VisitTime, Purpose, Review,PlaceLike,PlaceImage ,ReviewImage
 from django.db.models import Avg, Count
 from django.http import JsonResponse
 
@@ -134,10 +134,22 @@ def createreview(request, place_id):
         for pid in request.POST.getlist('purposes'):
             review.purposes.add(get_object_or_404(Purpose, pk=pid))
 
+        for img in request.FILES.getlist('images'):
+            ri = ReviewImage.objects.create(review=review, image=img)
+            PlaceImage.objects.create(place=place, image=ri.image.name)
+    
+        total = place.reviews.count()
+
         avg_level = place.reviews.aggregate(a=Avg('recommended_level'))['a']
         if avg_level is not None:
             place.recommended_level = round(avg_level)
-            place.save()
+            
+        place.has_con = place.reviews.filter(has_con=True).count() * 2 >= total
+        place.has_wifi = place.reviews.filter(has_wifi=True).count() * 2 >= total
+        place.has_kiosk = place.reviews.filter(has_kiosk=True).count() * 2 >= total
+        place.has_single_seat = place.reviews.filter(has_single_seat=True).count() * 2 >= total
+
+        place.save()
 
         p = request.user.profile
         p.exp += 50 #리뷰작성시 들어오는 경험치
