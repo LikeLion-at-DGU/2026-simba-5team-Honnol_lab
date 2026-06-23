@@ -28,6 +28,8 @@ class Profile(models.Model):
     level = models.IntegerField(default=1)
     exp = models.IntegerField(default=0)
     test_score = models.IntegerField(default=0)
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers', blank=True)
+    profile_image = models.ImageField(upload_to='profile/', blank=True, null=True)
 
     def level_name(self):
         return LEVEL_NAME.get(self.level, "달걀")
@@ -35,6 +37,11 @@ class Profile(models.Model):
     def required_exp(self):
         return REQUIRED_EXP.get(self.level, 0)
     
+    def display_image(self):
+        if self.profile_image:
+            return self.profile_image.url
+        return self.character_image
+
     def character_image(self):
         return f"/static/images/chick-stage-{self.level}.png"
         
@@ -117,6 +124,7 @@ class Review(models.Model):
     visit_times = models.ManyToManyField(VisitTime, related_name='reviews', blank=True)
     purposes = models.ManyToManyField(Purpose, related_name='reviews', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='liked_reviews', blank=True)
     def __str__(self):
         return f"{self.place.name} - {self.writer.profile.nickname}"
 
