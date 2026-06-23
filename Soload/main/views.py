@@ -216,6 +216,7 @@ def review_delete(request, review_id):
 def mypage(request):
     if not request.user.is_authenticated:
         return redirect('start')
+
     likes = PlaceLike.objects.filter(user=request.user)
     my_reviews = Review.objects.filter(writer=request.user)
     return render(request, 'pages/mypage.html', {

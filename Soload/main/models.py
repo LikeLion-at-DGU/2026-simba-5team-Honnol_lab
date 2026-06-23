@@ -37,13 +37,13 @@ class Profile(models.Model):
     def required_exp(self):
         return REQUIRED_EXP.get(self.level, 0)
     
-    def display_image(self):
-        if self.profile_image:
-            return self.profile_image.url
-        return self.character_image
-
     def character_image(self):
         return f"/static/images/chick-stage-{self.level}.png"
+
+    def display_image(self):
+        if self.image:
+            return self.image.url
+        return self.character_image()
         
     def __str__(self):
         return f"{self.user.username} (Lv.{self.level})"
