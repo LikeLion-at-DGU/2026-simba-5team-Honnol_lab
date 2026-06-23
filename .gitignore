@@ -13,7 +13,7 @@ ENV/
 *.log
 db.sqlite3
 staticfiles/
-
+db.sqlite3.backup
 # macOS
 .DS_Store
 
