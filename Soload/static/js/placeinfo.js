@@ -331,8 +331,55 @@ document.addEventListener("DOMContentLoaded", function () {
             return "cafe";
         }
 
-        return categoryMap[rawCategory] || "cafe";
-    }
+        const category = rawCategory.trim();
+
+        if (
+            category.includes("카페") ||
+            category.includes("CE7") ||
+            category.toLowerCase().includes("cafe")
+        ) {
+            return "cafe";
+        }
+
+        if (
+            category.includes("전시") ||
+            category.includes("미술관") ||
+            category.includes("박물관") ||
+            category.toLowerCase().includes("exhibition")
+        ) {
+            return "exhibition";
+        }
+
+        if (
+            category.includes("음식점") ||
+            category.includes("식당") ||
+            category.includes("밥집") ||
+            category.includes("맛집") ||
+            category.includes("FD6") ||
+            category.toLowerCase().includes("restaurant")
+        ) {
+            return "restaurant";
+        }
+
+        if (
+            category.includes("공원") ||
+            category.includes("산책") ||
+            category.includes("길") ||
+            category.toLowerCase().includes("walk")
+        ) {
+            return "walk";
+        }
+
+        if (
+            category.includes("영화") ||
+            category.includes("극장") ||
+            category.toLowerCase().includes("movie")
+        ) {
+            return "movie";
+        }
+
+        return "cafe";
+    }   
 
     function getLevel(rawLevel) {
         const level = Number(rawLevel);
@@ -350,6 +397,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const categoryKey = getCategoryKey(rawCategory);
         const level = getLevel(rawLevel);
+
+        console.log("rawCategory:", rawCategory);
+        console.log("categoryKey:", categoryKey);
+        console.log("rawLevel:", rawLevel);
+        console.log("level:", level);
 
         const selectedHelp = helpData[categoryKey];
         const selectedTips = selectedHelp.levels[level];
