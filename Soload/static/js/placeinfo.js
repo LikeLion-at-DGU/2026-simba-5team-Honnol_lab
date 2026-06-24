@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             levels: {
                 1: [
                     "음료를 주문한 뒤 창가나 구석 자리에 앉아보세요. 조용한 자리는 긴장을 줄이는 데 도움이 돼요.",
-                    "처음부터 오래 머물 필요는 없어요. 10~15분만 있어도 충분해요.",
+                    "처음부터 오래 머물 필요는 없어요. [[10~15분만 있어도 충분해요.]]",
                     "주변 사람들이 나를 신경 쓸 것 같아도 대부분은 자신의 일에 집중하고 있어요.",
                     "휴대폰을 보지 않고 카페 음악에 집중해 보세요.",
                     "음료의 향이나 맛을 천천히 느껴보세요.",
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "카페 인테리어에서 마음에 드는 부분을 찾아보세요.",
                     "오늘 가장 좋았던 일을 하나 떠올려 보세요.",
                     "“지금 이 시간은 나를 위한 시간이다”라고 생각해 보세요.",
-                    "혼자 카페에 온 것만으로도 충분히 잘하고 있다는 걸 기억하세요."
+                    "혼자 카페에 온 것만으로도 [[충분히 잘하고 있다는]] 걸 기억하세요."
                 ],
                 2: [
                     "읽고 싶었던 책이나 글을 가져와 보세요.",
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "카페에서 보내고 싶은 나만의 루틴을 생각해 보세요.",
                     "창밖을 보며 잠시 멍 때리는 시간을 가져보세요.",
                     "일기나 메모를 작성해 보세요.",
-                    "혼자 있는 시간이 불편한지 편안한지 스스로 관찰해 보세요."
+                    "혼자 있는 시간이 [[불편한지 편안한지 스스로 관찰]]해 보세요."
                 ],
                 3: [
                     "책이나 기사 하나를 읽어보세요.",
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "관심 없는 작품은 지나쳐도 괜찮아요.",
                     "관람객들과 속도를 맞출 필요는 없어요.",
                     "10분만 둘러본다는 마음으로 시작해 보세요.",
-                    "전시장에 온 것만으로도 새로운 경험이에요."
+                    "[[전시장에 온 것만으로도 새로운 경험]]이에요."
                 ],
                 2: [
                     "가장 마음에 드는 작품을 골라보세요.",
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "기억에 남는 작품을 사진으로 남겨보세요.",
                     "작품이 주는 감정을 생각해 보세요.",
                     "전시의 주제를 추측해 보세요.",
-                    "전시 공간의 분위기도 함께 즐겨보세요.",
+                    "[[전시 공간의 분위기도 함께 즐겨]]보세요.",
                     "관람 후 가장 기억에 남는 작품 하나를 떠올려 보세요."
                 ],
                 3: [
@@ -161,15 +161,15 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "🍽️음식점",
             levels: {
                 1: [
-                    "혼밥하는 사람은 생각보다 많아요. 너무 걱정하지 않아도 괜찮아요.",
+                    "혼밥하는 사람은 생각보다 많아요. [[너무 걱정하지 않아도 괜찮]]아요.",
                     "익숙하고 좋아하는 메뉴를 주문해 보세요.",
                     "식당에 들어가는 것 자체를 목표로 삼아도 좋아요.",
                     "자리에 앉으면 메뉴판을 천천히 둘러보세요.",
-                "음식을 먹는 속도를 남들과 비교하지 마세요.",
+                "음식을 먹는 속도를 [[남들과 비교하지 마세요]].",
                 "주변 시선보다 음식에 집중해 보세요.",
                 "음식의 맛과 향을 천천히 느껴보세요.",
                 "물 한 잔 마시며 긴장을 풀어보세요.",
-                "식사를 끝까지 마친 자신을 칭찬해 보세요.",
+                "식사를 끝까지 마친 [[자신을 칭찬]]해 보세요.",
                 "다음에도 올 수 있겠다는 생각이 들면 성공이에요."
                 ],
                 2: [
@@ -179,10 +179,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     "음식의 맛을 한 단어로 표현해 보세요.",
                     "다음에 또 방문할지 생각해 보세요.",
                     "메뉴판에서 다음에 먹고 싶은 음식을 찾아보세요.",
-                    "혼자 식사하는 편안함을 느껴보세요.",
+                    "[[혼자 식사하는 편안함]]을 느껴보세요.",
                     "식사하며 오늘 하루를 돌아보세요.",
                     "나만의 맛집 리스트를 만들어 보세요.",
-                    "식사 시간을 온전히 나에게 집중하는 시간으로 사용해 보세요."
+                    "식사 시간을 [[온전히 나에게 집중하는 시간]]으로 사용해 보세요."
 
                 ],
                 3: [
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "주변 소리에 집중해 보세요.",
                 "벤치가 보이면 잠시 앉아 쉬어보세요.",
                 "10분만 걸어도 괜찮아요.",
-                "밖에 나온 자신을 칭찬해 주세요."
+                "[[혼자 밖에 나온 자신을 칭찬]]해 주세요."
                 ],
                 2: [
                     "새로운 길로 조금만 더 걸어가 보세요.",
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "좋아하는 음악을 들으며 걸어보세요.",
                     "최근 고민을 정리해 보세요.",
                     "떠오르는 생각을 메모해 보세요.",
-                    "산책 후 기분이 어떻게 달라졌는지 생각해 보세요.",
+                    "산책 후 [[기분이 어떻게 달라졌는지]] 생각해 보세요.",
                     "다음에 와보고 싶은 장소를 찾아보세요.",
                     "나만의 산책 코스를 만들어 보세요."
                 ],
@@ -261,13 +261,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     "혼자 영화 보러 오는 사람은 정말 많아요.",
                     "보고 싶은 영화를 자유롭게 선택해 보세요.",
                     "좌석도 내가 원하는 자리를 고를 수 있어요.",
-                    "영화 시작 전 긴장되는 건 자연스러운 일이에요.",
+                    "영화 시작 전 [[긴장되는 건 자연스러운 일]]이에요.",
                     "팝콘이나 음료를 준비해 보세요.",
                     "영화가 시작되면 다른 사람은 거의 신경 쓰이지 않을 거예요.",
                     "영화 내용에만 집중해 보세요.",
                     "웃기면 웃고 슬프면 슬퍼해도 괜찮아요.",
                     "영화가 끝날 때까지 편하게 관람해 보세요.",
-                    "혼자 영화관에 온 자신을 칭찬해 보세요."
+                    "혼자 영화관에 [[온 자신을 칭찬해]] 보세요."
                 ],
                 2: [
                     "가장 기대되는 장면을 생각해 보세요.",
@@ -391,6 +391,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return 1;
     }
 
+    function escapeHtml(text) {
+        return String(text)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+    function renderHighlightedTip(tip) {
+        return escapeHtml(tip).replace(
+            /\[\[(.+?)\]\]/g,
+            '<span class="help-highlight">$1</span>'
+        );
+    }
+
     function renderHelpContent() {
         const rawCategory = helpDataElement.dataset.category;
         const rawLevel = helpDataElement.dataset.userLevel;
@@ -413,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         selectedTips.forEach(function (tip) {
             const li = document.createElement("li");
-            li.textContent = tip;
+            li.innerHTML = renderHighlightedTip(tip);
             helpList.appendChild(li);
         });
 

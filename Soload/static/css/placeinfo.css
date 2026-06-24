@@ -842,6 +842,11 @@ button{
     padding-left: 4px;
 }
 
+.help-highlight {
+    color: var(--g-darker, #598300);
+    font-weight: 600;
+}
+
 .help-description{
     margin-top: 32px;
 
