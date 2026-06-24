@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const reviewForm = document.querySelector("#review-form");
-    const savePopup = document.querySelector("#save-popup");
     const reviewMain = document.querySelector(".review_main");
     const group = reviewForm ? reviewForm.dataset.group : "food";
 
@@ -70,10 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 alert("Please write a short review.");
                 return;
-            }
-
-            if (savePopup) {
-                savePopup.classList.add("open");
             }
         });
     }
