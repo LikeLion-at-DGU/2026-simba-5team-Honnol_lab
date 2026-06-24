@@ -63,14 +63,12 @@ class Place(models.Model):
     recommended_level = models.IntegerField(default=1)
     category = models.CharField(max_length=30)
     address = models.CharField(max_length=200)
-    descirptions = models.TextField(blank=True)
     opening_hours = models.CharField(max_length=100, blank=True)
     tel = models.CharField(max_length=20, blank=True)
     has_wifi = models.BooleanField(default=False)
     has_con = models.BooleanField(default=False)
     has_kiosk = models.BooleanField(default=False)
     has_single_seat = models.BooleanField(default=False)
-    has_partition = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
@@ -124,7 +122,6 @@ class Review(models.Model):
     visit_times = models.ManyToManyField(VisitTime, related_name='reviews', blank=True)
     purposes = models.ManyToManyField(Purpose, related_name='reviews', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='liked_reviews', blank=True)
     def __str__(self):
         return f"{self.place.name} - {self.writer.profile.nickname}"
 

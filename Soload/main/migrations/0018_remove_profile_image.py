@@ -7,6 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("main", "0017_merge_0014_profile_image_0016_review_likes"),
+        ("main", "0014_profile_image"),
     ]
 
     operations = [
