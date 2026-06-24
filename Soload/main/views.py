@@ -217,8 +217,6 @@ def mypage(request):
     if not request.user.is_authenticated:
         return redirect('start')
 
-    profile_error = None
-
     if request.method == 'POST' and request.POST.get('form_type') == 'profile_edit':
         nickname = request.POST.get('nickname', '').strip()
 
@@ -238,7 +236,6 @@ def mypage(request):
         'likes': likes,
         'my_reviews': my_reviews,
         'active_nav': 'mypage',
-        'profile_error': profile_error,
     })
 
 def start(request):
@@ -342,36 +339,6 @@ def follow(request, user_id):
         me.followings.add(target.profile)
     
     return redirect('user_profile', user_id=target.id)
-
-def edit_profile(request):
-    if not request.user.is_authenticated:
-        return redirect('start')
-    
-    profile = request.user.profile
-
-    if request.method == 'POST':
-        profile.nickname = request.POST.get('nickname', profile.nickname)
-        
-        if request.FILES.get('profile_image'):
-            profile.profile_image = request.FILES.get('profile_image')
-        
-        profile.save()
-        return redirect('mypage')
-    return render(request, 'pages/edit_profile.html', {'profile': profile})
-
-def review_like(request, review_id):
-    if not request.user.is_authenticated:
-        return JsonResponse({'success': False}, status=403)
-    review = get_object_or_404(Review, pk=review_id)
-    
-    if request.user in review.likes.all():
-        review.likes.remove(request.user)
-        liked = False
-    else:
-        review.likes.add(request.user)
-        liked = True
-    return JsonResponse({'success': True, 'liked': liked, 'count': review.likes.count()})   
-    
 
 
  

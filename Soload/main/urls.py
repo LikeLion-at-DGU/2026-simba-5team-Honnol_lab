@@ -17,7 +17,5 @@ urlpatterns = [
     path('place/create-or-get/', views.create_place, name='create_place'),
     path('profile/<int:user_id>/', views.user_profile, name='user_profile'),
     path('profile/<int:user_id>/follow/', views.follow, name='follow'),
-    path('profile/edit/', views.edit_profile, name='edit_profile'),
-    path('review/<int:review_id>/like/', views.review_like, name='review_like'),
     path('review/<int:review_id>/update/', views.review_update, name='review_update'),
 ]
